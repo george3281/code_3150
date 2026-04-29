@@ -1,7 +1,8 @@
 #include "FileReader.h"
-#include "PlayingCard.h"
 #include "FaceCard.h"
 #include "JokerCard.h"
+#include "PlayingCard.h"
+
 #include <fstream>
 #include <stdexcept>
 
@@ -14,9 +15,10 @@ Deck FileReader::readDeckFromCSV(const std::string& path) {
     try {
         std::string line;
         while (std::getline(file, line)) {
-            if (line.empty()) continue;
+            if (line.empty())
+                continue;
 
-            size_t commaPos = line.find(',');
+            std::size_t commaPos = line.find(',');
             if (commaPos == std::string::npos)
                 throw std::runtime_error("Malformed CSV input");
 

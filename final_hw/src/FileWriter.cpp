@@ -1,4 +1,5 @@
 #include "FileWriter.h"
+
 #include <stdexcept>
 
 FileWriter::FileWriter(const std::string& path) {
@@ -9,6 +10,6 @@ FileWriter::FileWriter(const std::string& path) {
 }
 
 void FileWriter::writeRound(int round, const Deck& a, const Deck& b) {
-    file_ << round << "," << a.size() << "," << b.size() << ",\""
-          << a << "\",\"" << b << "\"\n";
+    file_ << round << "," << a.size() << "," << b.size() << ",\"" << a << "\",\""
+          << b << "\"\n";
 }
